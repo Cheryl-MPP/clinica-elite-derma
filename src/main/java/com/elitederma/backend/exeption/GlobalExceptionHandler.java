@@ -1,4 +1,4 @@
-package com.femtech.empresa.exeption;
+package com.elitederma.backend.exeption;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

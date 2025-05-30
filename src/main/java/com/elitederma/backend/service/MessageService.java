@@ -1,7 +1,7 @@
-package com.femtech.empresa.service;
+package com.elitederma.backend.service;
 
-import com.femtech.empresa.model.Message;
-import com.femtech.empresa.repository.MessageRepository;
+import com.elitederma.backend.model.Message;
+import com.elitederma.backend.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -68,7 +68,7 @@ public class MessageService {
                 Por favor, responde lo antes posible.
                 """.formatted(message.getClientName(), message.getClientEmail(), message.getSubject(), message.getContent());
 
-        emailService.sendContactEmail(to, subject, body, message.getClientEmail());
+//        emailService.sendContactEmail(to, subject, body, message.getClientEmail());
     }
 
     // enviar copia al cliente
@@ -91,7 +91,7 @@ public class MessageService {
                 El equipo de FemTech.
                 """.formatted(message.getClientName(), message.getSubject(), message.getContent());
 
-        emailService.sendContactEmail(to, subject, body, "info@femtechcr.com");
+//        emailService.sendContactEmail(to, subject, body, "info@femtechcr.com");
     }
 
     // eliminar mensaje con validación

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto | Clínica Elite Derma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fefefe;
+      padding: 2rem;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #f4f4f4;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    input, textarea {
+      width: 100%;
+      padding: .8rem;
+      margin: .5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #24bfa0;
+      color: white;
+      padding: .8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .whatsapp-btn {
+      display: block;
+      margin: 2rem auto 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Contáctenos</h2>
+
+  <form id="contact-form">
+    <input type="text" name="clientName" placeholder="Nombre completo" required>
+    <input type="email" name="clientEmail" placeholder="Correo electrónico" required>
+    <input type="text" name="subject" placeholder="Asunto (opcional)">
+    <textarea name="content" rows="5" placeholder="Mensaje" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+
+  <div class="whatsapp-btn">
+    <a href="https://wa.me/50660196197?text=Hola%20doctor%20Miamoyyy%2C%20quiero%20información%20sobre%20sus%20tratamientos%20estéticos" target="_blank">
+      <button style="background:#25D366;">📱 Contactar por WhatsApp</button>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {
+        clientName: formData.get('clientName'),
+        clientEmail: formData.get('clientEmail'),
+        subject: formData.get('subject'),
+        content: formData.get('content')
+      };
+
+      const response = await fetch('http://localhost:8080/api/contacto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Mensaje enviado con éxito 🥰');
+        this.reset();
+      } else {
+        alert('Ups... algo salió mal 😥');
+      }
+    });
+  </script>
+
+</body>
+</html>

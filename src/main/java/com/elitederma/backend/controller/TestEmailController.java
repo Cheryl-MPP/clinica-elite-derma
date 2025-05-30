@@ -1,6 +1,6 @@
-package com.femtech.empresa.controller;
+package com.elitederma.backend.controller;
 
-import com.femtech.empresa.service.EmailService;
+import com.elitederma.backend.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

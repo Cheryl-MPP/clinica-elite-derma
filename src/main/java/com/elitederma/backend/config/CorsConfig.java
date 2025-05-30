@@ -1,4 +1,4 @@
-package com.femtech.empresa.config;
+package com.elitederma.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

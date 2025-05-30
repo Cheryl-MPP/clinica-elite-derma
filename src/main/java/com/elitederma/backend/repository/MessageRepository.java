@@ -1,6 +1,6 @@
-package com.femtech.empresa.repository;
+package com.elitederma.backend.repository;
 
-import com.femtech.empresa.model.Message;
+import com.elitederma.backend.model.Message;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

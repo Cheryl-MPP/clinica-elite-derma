@@ -1,6 +1,6 @@
-package com.femtech.empresa.service;
+package com.elitederma.backend.service;
 
-import com.femtech.empresa.model.BusinessRequestDTO;
+import com.elitederma.backend.model.BusinessRequestDTO;
 import org.springframework.stereotype.Service;
 
 @Service

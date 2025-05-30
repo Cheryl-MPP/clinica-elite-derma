@@ -1,8 +1,8 @@
-package com.femtech.empresa.controller;
+package com.elitederma.backend.controller;
 
-import com.femtech.empresa.model.Message;
-import com.femtech.empresa.service.MessageService;
-import com.femtech.empresa.service.RecaptchaService;
+import com.elitederma.backend.model.Message;
+import com.elitederma.backend.service.MessageService;
+import com.elitederma.backend.service.RecaptchaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -58,10 +58,10 @@ public class MessageController {
             String content = (String) request.get("content");
             String recaptchaToken = (String) request.get("recaptchaToken");
 
-            // validar reCAPTCHA
-            if (recaptchaToken == null || !recaptchaService.validateRecaptcha(recaptchaToken)) {
-                return ResponseEntity.badRequest().body("❌ error: reCAPTCHA no válido.");
-            }
+//            // validar reCAPTCHA
+//            if (recaptchaToken == null || !recaptchaService.validateRecaptcha(recaptchaToken)) {
+//                return ResponseEntity.badRequest().body("❌ error: reCAPTCHA no válido.");
+//            }
 
             // validar datos básicos
             if (clientName == null || clientEmail == null || subject == null || content == null) {
@@ -91,5 +91,11 @@ public class MessageController {
         }
         messageService.deleteMessage(id);
         return ResponseEntity.ok("✅ mensaje eliminado con éxito.");
+    }
+
+    // Endpoint de prueba
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("Funciona ✅");
     }
 }

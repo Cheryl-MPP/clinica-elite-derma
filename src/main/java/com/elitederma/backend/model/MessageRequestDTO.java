@@ -1,4 +1,4 @@
-package com.femtech.empresa.model;
+package com.elitederma.backend.model;
 
 public record MessageRequestDTO(
         String clientName,

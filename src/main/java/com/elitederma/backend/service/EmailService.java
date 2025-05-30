@@ -1,4 +1,4 @@
-package com.femtech.empresa.service;
+package com.elitederma.backend.service;
 
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
